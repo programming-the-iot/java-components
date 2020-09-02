@@ -1,12 +1,9 @@
 /**
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
+ * This class is part of the Programming the Internet of Things project.
  * 
- * It is provided as a simple shell to guide the student and
- * assist with implementation for the Programming the Internet
- * of Things exercises related to the functionality that it
- * will eventually contain.
+ * It is provided as a simple shell to guide the student and assist with
+ * implementation for the Programming the Internet of Things exercises,
+ * and designed to be modified by the student as needed.
  */ 
 
 package programmingtheiot.gda.system;
