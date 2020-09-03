@@ -1,0 +1,59 @@
+# Gateway Device Application (Connected Devices)
+
+## Lab Module 12 - Semester Project
+
+Be sure to implement all the PIOT-GDA-* issues (requirements) listed at [PIOT-INF-12-001 - Chapter 12](https://github.com/orgs/programming-the-iot/projects/1#column-10488565).
+
+### Description
+
+NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
+
+What does your implementation do? 
+
+How does your implementation work?
+
+### Code Repository and Branch
+
+NOTE: Be sure to include the branch (e.g. https://github.com/programming-the-iot/python-components/tree/alpha001).
+
+URL: 
+
+### UML and Process Design Diagram(s)
+
+NOTE: Include your overall process design diagram, followed by the GDA and CDA UML diagrams
+representing your design approach. The UML diagrams should accurately reflect the class and
+module relationships for your GDA and CDA, while your process design can be drawn any way you'd
+like as long as it's clear and depicts the two tiers (Edge Tier and Cloud Tier) that
+comprise your implementation.
+
+#### Edge and Cloud Tier Process Design Diagram(s) for the Entire Solution (CDA -> GDA -> Cloud Services)
+
+
+#### UML Design Diagram(s) for the GDA
+
+
+#### UML Design Diagram(s) for the CDA
+
+
+### Unit Tests Executed
+
+NOTE: TA's will execute your unit tests. You only need to list each test case below
+(e.g. ConfigUtilTest, DataUtilTest, etc). Be sure to include all previous tests, too,
+since you need to ensure you haven't introduced regressions.
+
+- 
+- 
+- 
+
+### Integration Tests Executed
+
+NOTE: TA's will execute most of your integration tests using their own environment, with
+some exceptions (such as your cloud connectivity tests). In such cases, they'll review
+your code to ensure it's correct. As for the tests you execute, you only need to list each
+test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
+
+- 
+- 
+- 
+
+EOF.
