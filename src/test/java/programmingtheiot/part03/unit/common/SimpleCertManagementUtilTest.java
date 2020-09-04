@@ -6,7 +6,7 @@
  * Copyright (c) 2020 by Andrew D. King
  */ 
 
-package programmingtheiot.unit.common;
+package programmingtheiot.part03.unit.common;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -20,7 +20,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import programmingtheiot.common.SimpleCertManagementUtil;
-import programmingtheiot.unit.data.DataUtilTest;
 
 /**
  * This test case class contains very basic unit tests for

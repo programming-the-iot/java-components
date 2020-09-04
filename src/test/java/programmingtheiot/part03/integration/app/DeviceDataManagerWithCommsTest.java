@@ -6,7 +6,7 @@
  * Copyright (c) 2020 by Andrew D. King
  */ 
 
-package programmingtheiot.integration.app;
+package programmingtheiot.part03.integration.app;
 
 import static org.junit.Assert.*;
 
@@ -18,28 +18,25 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import programmingtheiot.gda.app.GatewayDeviceApp;
-import programmingtheiot.integration.system.SystemPerformanceManagerTest;
+import programmingtheiot.gda.app.DeviceDataManager;
 
 /**
  * This test case class contains very basic integration tests for
- * GatewayDeviceAppTest. It should not be considered complete,
+ * DeviceDataManager. It should not be considered complete,
  * but serve as a starting point for the student implementing
  * additional functionality within their Programming the IoT
  * environment.
  *
  */
-public class GatewayDeviceAppTest
+public class DeviceDataManagerWithCommsTest
 {
 	// static
 	
 	private static final Logger _Logger =
-		Logger.getLogger(GatewayDeviceAppTest.class.getName());
+		Logger.getLogger(DeviceDataManagerWithCommsTest.class.getName());
 	
 
 	// member var's
-	
-	private GatewayDeviceApp gda = null;
 	
 	
 	// test setup methods
@@ -66,7 +63,6 @@ public class GatewayDeviceAppTest
 	@Before
 	public void setUp() throws Exception
 	{
-		gda = new GatewayDeviceApp((String[]) null);
 	}
 	
 	/**
@@ -77,28 +73,44 @@ public class GatewayDeviceAppTest
 	{
 	}
 	
+	
 	// test methods
 	
 	/**
-	 * Convenience test method for starting and stopping the GDA. This will invoke both
-	 * {@link programmingtheiot.gda.app.GatewayDeviceApp#startApp()} and
-	 * {@link programmingtheiot.gda.app.GatewayDeviceApp#stopApp(int)} in sequence.
-	 * <p>
-	 * Validation is via log output and the expectation that no exception will be
-	 * thrown during execution.
+	 * Test method for running the DeviceDataManager.
 	 */
 	@Test
-	public void testStartAndStopGatewayApp()
+	public void testStartAndStopManagerNoComms()
 	{
-		this.gda.startApp();
+		boolean enableMqtt = false;
+		boolean enableCoap = false;
+		boolean enableCloud = false;
+		boolean enableSmtp = false;
+		boolean enablePersistence = false;
+
+		DeviceDataManager devDataMgr =
+			new DeviceDataManager(enableMqtt, enableCoap, enableCloud, enableSmtp, enablePersistence);
+		
+		devDataMgr.startManager();
 		
 		try {
-			Thread.sleep(65000L);
+			Thread.sleep(60000L);
 		} catch (InterruptedException e) {
 			// ignore
 		}
 		
-		this.gda.stopApp(0);
+		devDataMgr.stopManager();
 	}
+	
+	/**
+	def testStartAndStopManagerNoComms(self):
+
+	def testStartAndStopManagerWithMqtt(self):
+
+	def testStartAndStopManagerWithCoap(self):
+
+	def testStartAndStopManagerWithMqttAndCoap(self):
+	 * 
+	 */
 	
 }

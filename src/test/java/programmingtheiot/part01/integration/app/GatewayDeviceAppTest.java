@@ -1,4 +1,5 @@
 /**
+ * 
  * This class is part of the Programming the Internet of Things
  * project, and is available via the MIT License, which can be
  * found in the LICENSE file at the top level of this repository.
@@ -6,7 +7,7 @@
  * Copyright (c) 2020 by Andrew D. King
  */ 
 
-package programmingtheiot.integration.app;
+package programmingtheiot.part01.integration.app;
 
 import static org.junit.Assert.*;
 
@@ -18,25 +19,27 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import programmingtheiot.gda.app.DeviceDataManager;
+import programmingtheiot.gda.app.GatewayDeviceApp;
 
 /**
  * This test case class contains very basic integration tests for
- * DeviceDataManagerTest. It should not be considered complete,
+ * GatewayDeviceApp. It should not be considered complete,
  * but serve as a starting point for the student implementing
  * additional functionality within their Programming the IoT
  * environment.
  *
  */
-public class DeviceDataManagerTest
+public class GatewayDeviceAppTest
 {
 	// static
 	
 	private static final Logger _Logger =
-		Logger.getLogger(DeviceDataManagerTest.class.getName());
+		Logger.getLogger(GatewayDeviceAppTest.class.getName());
 	
 
 	// member var's
+	
+	private GatewayDeviceApp gda = null;
 	
 	
 	// test setup methods
@@ -63,6 +66,7 @@ public class DeviceDataManagerTest
 	@Before
 	public void setUp() throws Exception
 	{
+		gda = new GatewayDeviceApp((String[]) null);
 	}
 	
 	/**
@@ -73,44 +77,28 @@ public class DeviceDataManagerTest
 	{
 	}
 	
-	
 	// test methods
 	
 	/**
-	 * Test method for running the DeviceDataManager.
+	 * Convenience test method for starting and stopping the GDA. This will invoke both
+	 * {@link programmingtheiot.gda.app.GatewayDeviceApp#startApp()} and
+	 * {@link programmingtheiot.gda.app.GatewayDeviceApp#stopApp(int)} in sequence.
+	 * <p>
+	 * Validation is via log output and the expectation that no exception will be
+	 * thrown during execution.
 	 */
 	@Test
-	public void testStartAndStopManagerNoComms()
+	public void testStartAndStopGatewayApp()
 	{
-		boolean enableMqtt = false;
-		boolean enableCoap = false;
-		boolean enableCloud = false;
-		boolean enableSmtp = false;
-		boolean enablePersistence = false;
-
-		DeviceDataManager devDataMgr =
-			new DeviceDataManager(enableMqtt, enableCoap, enableCloud, enableSmtp, enablePersistence);
-		
-		devDataMgr.startManager();
+		this.gda.startApp();
 		
 		try {
-			Thread.sleep(60000L);
+			Thread.sleep(65000L);
 		} catch (InterruptedException e) {
 			// ignore
 		}
 		
-		devDataMgr.stopManager();
+		this.gda.stopApp(0);
 	}
-	
-	/**
-	def testStartAndStopManagerNoComms(self):
-
-	def testStartAndStopManagerWithMqtt(self):
-
-	def testStartAndStopManagerWithCoap(self):
-
-	def testStartAndStopManagerWithMqttAndCoap(self):
-	 * 
-	 */
 	
 }

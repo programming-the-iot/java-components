@@ -6,7 +6,7 @@
  * Copyright (c) 2020 by Andrew D. King
  */ 
 
-package programmingtheiot.unit.system;
+package programmingtheiot.part02.unit.system;
 
 import static org.junit.Assert.*;
 
@@ -19,27 +19,26 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import programmingtheiot.data.SensorData;
-import programmingtheiot.gda.system.SystemMemUtilTask;
-import programmingtheiot.unit.data.DataUtilTest;
+import programmingtheiot.gda.system.SystemCpuUtilTask;
 
 /**
  * This test case class contains very basic unit tests for
- * SystemMemUtilTaskTest. It should not be considered complete,
+ * SystemCpuUtilTaskTest. It should not be considered complete,
  * but serve as a starting point for the student implementing
  * additional functionality within their Programming the IoT
  * environment.
  *
  */
-public class SystemMemUtilTaskTest
+public class SystemCpuUtilTaskTest
 {
 	// static
 	
 	private static final Logger _Logger =
-		Logger.getLogger(SystemMemUtilTaskTest.class.getName());
+		Logger.getLogger(SystemCpuUtilTaskTest.class.getName());
 	
 	// member var's
 	
-	private SystemMemUtilTask memUtilTask = null;
+	private SystemCpuUtilTask cpuUtilTask = null;
 	
 	// test setup methods
 	
@@ -65,7 +64,7 @@ public class SystemMemUtilTaskTest
 	@Before
 	public void setUp() throws Exception
 	{
-		this.memUtilTask = new SystemMemUtilTask();
+		this.cpuUtilTask = new SystemCpuUtilTask();
 	}
 	
 	/**
@@ -84,7 +83,7 @@ public class SystemMemUtilTaskTest
 	@Test
 	public void testGenerateTelemetry()
 	{
-		SensorData sd = this.memUtilTask.generateTelemetry();
+		SensorData sd = this.cpuUtilTask.generateTelemetry();
 		
 		assertNotNull(sd);
 		
@@ -93,7 +92,7 @@ public class SystemMemUtilTaskTest
 		if (val >= 0.0f) {
 			assertTrue(sd.getValue() >= 0.0f);
 		} else {
-			_Logger.info("Memory util not supported on this OS.");
+			_Logger.info("CPU util not supported on this OS.");
 		}
 	}
 	
@@ -103,19 +102,19 @@ public class SystemMemUtilTaskTest
 	@Test
 	public void testGetTelemetryValue()
 	{
-		float memUtil  = 0.0f;
+		float cpuUtil  = 0.0f;
 		int   totTests = 5;
 		
-		memUtil = this.memUtilTask.getTelemetryValue();
+		cpuUtil = this.cpuUtilTask.getTelemetryValue();
 		
 		for (int i = 1; i <= totTests; i++) {
-			if (memUtil >= 0.0f) {
-				_Logger.info("Test " + i + ": Memory Util: " + memUtil);
-				assertTrue(memUtil >= 0.0f);
-			} else if (memUtil < 0.0f) {
-				_Logger.info("Test " + i + ": Memory Util not supported on this OS: " + memUtil);
+			if (cpuUtil >= 0.0f) {
+				_Logger.info("Test " + i + ": CPU Util: " + cpuUtil);
+				assertTrue(cpuUtil >= 0.0f);
+			} else if (cpuUtil < 0.0f) {
+				_Logger.info("Test " + i + ": CPU Util not supported on this OS: " + cpuUtil);
 			} else {
-				fail("Failed to retrieve Memory utilization.");
+				fail("Failed to retrieve CPU utilization.");
 			}
 		}
 	}

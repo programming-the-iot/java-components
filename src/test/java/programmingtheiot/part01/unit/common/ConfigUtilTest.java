@@ -6,7 +6,7 @@
  * Copyright (c) 2020 by Andrew D. King
  */ 
 
-package programmingtheiot.unit.common;
+package programmingtheiot.part01.unit.common;
 
 import static org.junit.Assert.*;
 
