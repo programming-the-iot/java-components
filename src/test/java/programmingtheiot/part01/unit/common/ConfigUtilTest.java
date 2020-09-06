@@ -33,7 +33,7 @@ public class ConfigUtilTest
 	private static final Logger _Logger =
 		Logger.getLogger(ConfigUtilTest.class.getName());
 	
-	public static final String DIR_PREFIX = "./src/test/java/programmingtheiot/unit/common/";
+	public static final String DIR_PREFIX = "./src/test/java/programmingtheiot/part01/unit/common/";
 	public static final String TEST_VALID_CFG_FILE   = DIR_PREFIX + "ValidTestConfig.props";
 	public static final String TEST_EMPTY_CFG_FILE   = DIR_PREFIX + "EmptyTestConfig.props";
 	public static final String TEST_INVALID_CFG_FILE = DIR_PREFIX + "InvalidTestConfig.props";
