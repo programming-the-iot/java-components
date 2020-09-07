@@ -40,8 +40,6 @@ host           = localhost
 port           = 5683
 securePort     = 5684
 enableCrypt    = False
-testGdaDataPath = /tmp/gda-data
-testCdaDataPath = /tmp/cda-data
 
 #
 # GDA specific configuration information
@@ -54,3 +52,5 @@ enableCoapServer        = False
 enableCloudClient       = False
 enableSmtpClient        = False
 enablePersistenceClient = False
+testGdaDataPath = /tmp/gda-data
+testCdaDataPath = /tmp/cda-data
