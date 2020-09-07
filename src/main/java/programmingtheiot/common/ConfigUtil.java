@@ -49,7 +49,7 @@ public class ConfigUtil
 	private HierarchicalINIConfiguration sectionProperties = null;
 	
 	private boolean isLoaded = false;
-	private String  configFileName = "";
+	private String  configFileName = ConfigConst.DEFAULT_CONFIG_FILE_NAME;
 	
 	
 	// constructors
@@ -129,7 +129,7 @@ public class ConfigUtil
 	{
 		SubnodeConfiguration subNodeConfig = sectionProperties.getSection(section);
 		
-		return subNodeConfig.getBoolean(propName);
+		return subNodeConfig.getBoolean(propName, false);
 	}
 	
 	/**
@@ -337,8 +337,8 @@ public class ConfigUtil
 		if (! cfgFile.exists()) {
 			_Logger.log(
 				Level.WARNING,
-				"System properties config file {0} doesn't exist. Using default.",
-				cfgFile.getAbsolutePath());
+				"System properties config file '" + cfgFile.getAbsolutePath() + "' doesn't exist. Using default.",
+				new Exception());
 			
 			cfgFile = new File(ConfigConst.DEFAULT_CONFIG_FILE_NAME);
 		}
