@@ -18,7 +18,6 @@ import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.commons.lang.CharSet;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +31,6 @@ import programmingtheiot.data.DataUtil;
 import programmingtheiot.data.ActuatorData;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
-import programmingtheiot.part02.integration.app.DeviceDataManagerNoCommsTest;
 
 /**
  * This test case class contains very basic integration tests for
@@ -71,8 +69,8 @@ public class DataIntegrationTest
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception
 	{
-		_CdaDataPath = ConfigUtil.getInstance().getProperty(ConfigConst.GATEWAY_DEVICE, ConfigConst.TEST_GDA_DATA_PATH_KEY);
-		_GdaDataPath = ConfigUtil.getInstance().getProperty(ConfigConst.GATEWAY_DEVICE, ConfigConst.TEST_CDA_DATA_PATH_KEY);
+		_CdaDataPath = ConfigUtil.getInstance().getProperty(ConfigConst.GATEWAY_DEVICE, ConfigConst.TEST_CDA_DATA_PATH_KEY);
+		_GdaDataPath = ConfigUtil.getInstance().getProperty(ConfigConst.GATEWAY_DEVICE, ConfigConst.TEST_GDA_DATA_PATH_KEY);
 		
 		try {
 			File gdaPath = new File(_GdaDataPath);
