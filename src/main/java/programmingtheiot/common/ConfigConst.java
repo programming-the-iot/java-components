@@ -80,6 +80,9 @@ public class ConfigConst
 	
 	public static final int DEFAULT_QOS = 0;
 	
+	public static final String TEST_GDA_DATA_PATH_KEY = "testGdaDataPath";
+	public static final String TEST_CDA_DATA_PATH_KEY = "testCdaDataPath";
+
 	public static final String LOCAL   = "Local";
 	public static final String MQTT    = "Mqtt";
 	public static final String COAP    = "Coap";
