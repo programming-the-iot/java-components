@@ -5,23 +5,25 @@
 ### Description
 
 On the following page(s), be sure to address the following four topics: 
-- Problem
-- Technical Approach
-- Planned Services
-- Expected Results and Metrics
+- What - The Problem
+- Why - Who Cares?
+- How - Expected Technical Approach
+- Results - Expected Outcomes
 
-### Problem 
+
+### What - The Problem 
 
 NOTE: Write one or two paragraphs to answer EACH of the following questions.
 
 What problem are you trying to solve and why does it matter?
 
 
-Why do you care about this particular problem? 
+### Why - Who Cares? 
 
+Why do you care about this particular problem? 
  
 
-### Expected Technical Approach
+### How - Expected Technical Approach
 
 NOTE: Provide a high level design diagram depicting your planned technical approach. This should be a relatively
 simple block diagram - you do NOT need to create a UML diagram for the proposal, although you should provide
@@ -30,14 +32,7 @@ your constrained device, gateway device, and cloud services. You may make change
 implementation if needed - this should serve merely as a guide. 
 
  
-### Expected Cloud Services
-
-List the cloud services and capabilities you think you'll utilize (you may change these for the final submission
-if you'd like). Be specific - for instance, if you’ll utilize AWS Lambda and DynamoDB, list these services.
-Keep in mind you may use alternative services for the final implementation if needed. 
-
- 
-### Expected Results and Metrics 
+### Results - Expected Outcomes 
 
 NOTE: Write one or two paragraphs to answer the following question.
 
