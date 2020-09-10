@@ -11,9 +11,11 @@ package programmingtheiot.part01.unit.common;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import programmingtheiot.common.*;
@@ -43,6 +45,9 @@ public class ConfigUtilTest
 	public static final String NOT_SET_VAL = "Not Set";
 	public static final int    PORT_VAL    = 1883;
 	
+	public static final String DEFAULT_USER = "Foo";
+	public static final String DEFAULT_AUTH = "Bar";
+
 	
 	// member var's
 	
@@ -50,6 +55,17 @@ public class ConfigUtilTest
 	
 	
 	// test setup methods
+	
+	/**
+	 * 
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception
+	{
+		// ConfigUtil will check if the property is set, and if so,
+		// use it within this JRE instance
+		System.setProperty(ConfigConst.CONFIG_FILE_KEY, TEST_VALID_CFG_FILE);
+	}
 	
 	/**
 	 * @throws java.lang.Exception
@@ -63,6 +79,17 @@ public class ConfigUtilTest
 	}
 	
 	// test methods
+	
+	@Test
+	public void testGetCredentials()
+	{
+		Properties props =
+			ConfigUtil.getInstance().getCredentials(ConfigConst.GATEWAY_DEVICE);
+		
+		assertNotNull(props);
+		assertEquals(props.getProperty(ConfigConst.USER_NAME_TOKEN_KEY), DEFAULT_USER);
+		assertEquals(props.getProperty(ConfigConst.USER_AUTH_TOKEN_KEY), DEFAULT_AUTH);
+	}
 	
 	/**
 	 * Test method for {@link com.labbenchstudios.edu.connecteddevices.common.ConfigUtil#getBooleanProperty(java.lang.String, java.lang.String)}.

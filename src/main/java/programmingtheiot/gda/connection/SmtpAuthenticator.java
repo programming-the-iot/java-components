@@ -48,7 +48,7 @@ public class SmtpAuthenticator extends Authenticator
 	protected PasswordAuthentication getPasswordAuthentication()
 	{
 		Properties credProps =
-			ConfigUtil.getInstance().loadCredentials(ConfigConst.SMTP_GATEWAY_SERVICE);
+			ConfigUtil.getInstance().getCredentials(ConfigConst.SMTP_GATEWAY_SERVICE);
 		
 		return new PasswordAuthentication(
 			credProps.getProperty(ConfigConst.USER_NAME_TOKEN_KEY),
