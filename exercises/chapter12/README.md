@@ -1,8 +1,8 @@
 # Gateway Device Application (Connected Devices)
 
-## Lab Module 12 - Semester Project
+## Lab Module 12 - Semester Project - GDA Components
 
-Be sure to implement all the PIOT-GDA-* issues (requirements) listed at [PIOT-INF-12-001 - Chapter 12](https://github.com/orgs/programming-the-iot/projects/1#column-10488565).
+Be sure to implement all the PIOT-GDA-* issues (requirements) listed at [PIOT-INF-11-001 - Chapter 11](https://github.com/orgs/programming-the-iot/projects/1#column-10488514).
 
 ### Description
 
@@ -18,21 +18,11 @@ NOTE: Be sure to include the branch (e.g. https://github.com/programming-the-iot
 
 URL: 
 
-### UML and Process Design Diagram(s)
+### UML Design Diagram(s)
 
-NOTE: Include your overall process design diagram, followed by the GDA and CDA UML diagrams
-representing your design approach. The UML diagrams should accurately reflect the class and
-module relationships for your GDA and CDA, while your process design can be drawn any way you'd
-like as long as it's clear and depicts the two tiers (Edge Tier and Cloud Tier) that
-comprise your implementation.
-
-#### Edge and Cloud Tier Process Design Diagram(s) for the Entire Solution (CDA -> GDA -> Cloud Services)
-
-
-#### UML Design Diagram(s) for the GDA
-
-
-#### UML Design Diagram(s) for the CDA
+NOTE: Include one or more UML designs representing your solution. It's expected each
+diagram you provide will look similar to, but not the same as, its counterpart in the
+book [Programming the IoT](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/).
 
 
 ### Unit Tests Executed
