@@ -16,7 +16,17 @@ port           = 1883
 securePort     = 1884
 defaultQoS     = 0
 keepAlive      = 30
-enableCrypt    = False
+enableCrypt    = True
+
+#
+# SMTP client configuration information
+#
+[Smtp.GatewayService]
+credFile       = ./cred/PiotSmtpCred.props
+host           = localhost
+port           = 25
+securePort     = 587
+enableCrypt    = True
 
 #
 # MQTT client configuration information
@@ -36,6 +46,7 @@ enableCrypt    = False
 #
 [Coap.GatewayService]
 credFile       = ./cred/PiotCoapCred.props
+certFile       = ./cert/PiotCoapLocalCertFile.pem
 host           = localhost
 port           = 5683
 securePort     = 5684
