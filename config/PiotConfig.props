@@ -1,0 +1,80 @@
+#####
+# Configuration file for the Gateway Device App (GDA)
+#
+# This provides a section-based configuration format for use by
+# ConfigUtil with keys defined in ConfigConst.
+#
+# IMPORTANT: Edit this file to meet your local system requirements.
+#
+
+#
+# Cloud client configuration information
+#
+[Cloud.GatewayService]
+credFile       = ./cred/PiotCloudCred.props
+certFile       = ./cert/PiotCloudCert.pem
+host           = localhost
+port           = 1883
+securePort     = 8883
+defaultQoS     = 0
+keepAlive      = 60
+enableAuth     = True
+enableCrypt    = True
+baseUrl        = 
+baseTopic      = 
+
+#
+# SMTP client configuration information
+#
+[Smtp.GatewayService]
+credFile       = ./cred/PiotSmtpCred.props
+host           = localhost
+port           = 25
+securePort     = 587
+enableAuth     = True
+enableCrypt    = True
+
+#
+# MQTT client configuration information
+#
+[Mqtt.GatewayService]
+credFile       = ./cred/PiotMqttCred.props
+certFile       = ./cert/PiotMqttLocalCertFile.pem
+host           = localhost
+port           = 1883
+securePort     = 8883
+defaultQoS     = 0
+keepAlive      = 60
+enableAuth     = False
+enableCrypt    = False
+
+#
+# CoAP client and server configuration information
+#
+[Coap.GatewayService]
+credFile       = ./cred/PiotCoapCred.props
+certFile       = ./cert/PiotCoapLocalCertFile.pem
+host           = localhost
+port           = 5683
+securePort     = 5684
+enableAuth     = False
+enableCrypt    = False
+enableConfirmedMsgs = True
+
+#
+# GDA specific configuration information
+#
+[GatewayDevice]
+deviceLocationID        = gatewaydevice001
+enableLogging           = True
+pollCycleSecs           = 60
+enableMqttClient        = True
+enableCoapServer        = False
+enableCoapClient        = False
+enableCloudClient       = False
+enableSmtpClient        = False
+enablePersistenceClient = False
+enableSystemPerformance = False
+testGdaDataPath         = /tmp/gda-data
+testCdaDataPath         = /tmp/cda-data
+testEmptyApp            = False

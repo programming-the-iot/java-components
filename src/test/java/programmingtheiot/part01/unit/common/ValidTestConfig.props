@@ -1,0 +1,48 @@
+#
+# Cloud client configuration information
+#
+[Cloud.GatewayService]
+credFile       = ./cred/PiotCloudCred.props
+certFile       = ./cert/PiotMqttCloudCertFile.pem
+host           = localhost
+port           = 1883
+securePort     = 1884
+defaultQoS     = 0
+keepAlive      = 30
+enableCrypt    = False
+
+#
+# MQTT client configuration information
+#
+[Mqtt.GatewayService]
+credFile       = ./cred/PiotMqttCred.props
+certFile       = ./cert/PiotMqttLocalCertFile.pem
+host           = localhost
+port           = 1883
+securePort     = 1884
+defaultQoS     = 0
+keepAlive      = 30
+enableCrypt    = False
+
+#
+# CoAP client and server configuration information
+#
+[Coap.GatewayService]
+credFile       = ./cred/PiotCoapCred.props
+host           = localhost
+port           = 5683
+securePort     = 5684
+enableCrypt    = False
+
+#
+# GDA specific configuration information
+#
+[GatewayDevice]
+enableLogging           = True
+pollCycleSecs           = 60
+enableMqttClient        = True
+enableCoapServer        = False
+enableCloudClient       = False
+enableSmtpClient        = False
+enablePersistenceClient = False
+credFile                = ./src/test/java/programmingtheiot/part01/unit/common/DummyCredFile.props
