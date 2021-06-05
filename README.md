@@ -45,23 +45,23 @@ This repository has external dependencies on other open source projects. I'm gra
 Core exercises:
 
 - [californium-core](https://github.com/eclipse/californium)
-  - Reference: Eclipse Foundation, Inc. californium. (2020) [Online]. Available. https://github.com/eclipse/californium.
+  - Reference: Eclipse Foundation, Inc. Californium (Cf) - CoAP for Java. (2020) [Online]. Available. https://github.com/eclipse/californium.
 - [californium/scandium-core](https://github.com/eclipse/californium/tree/master/scandium-core)
-  - Reference: Eclipse Foundation, Inc. scandium-core. (2021) [Online]. Available. https://github.com/eclipse/californium/tree/master/scandium-core.
+  - Reference: Eclipse Foundation, Inc. Scandium (Sc) - Security for Californium. (2021) [Online]. Available. https://github.com/eclipse/californium/tree/master/scandium-core.
 - [commons-cli](https://commons.apache.org/proper/commons-cli/)
   - Reference: The Apache Software Foundation. Commons CLI. (2019) [Online]. Available. https://commons.apache.org/proper/commons-cli/.
 - [commons-configuration](commons.apache.org/proper/commons-configuration/)
   - Reference: The Apache Software Foundation. Commons Configuration. (2020) [Online]. Available: https://commons.apache.org/proper/commons-configuration/.
 - [eclipse paho](https://www.eclipse.org/paho/)
-  - Reference: Eclipse Foundation, Inc. paho-mqtt-java. (2020) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
+  - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2020) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
 - [gson](https://github.com/google/gson)
   - Reference: Google. Gson. (2008) [Online]. Available: https://github.com/google/gson.
 - [javax mail](https://javaee.github.io/javamail/)
   - Reference: Oracle. JavaMail. (2020) [Online]. Available: https://javaee.github.io/javamail/.
 - [jedis](https://github.com/redis/jedis)
-  - Reference: J. Leibiusky. jedis. (2020) [Online]. Available: https://github.com/redis/jedis.
+  - Reference: J. Leibiusky. Jedis. (2020) [Online]. Available: https://github.com/redis/jedis.
 - [junit](https://github.com/junit-team/junit4/)
-  - Reference: JUnit. JUnit. (2020) [Online]. Available: https://junit.org/junit4/.
+  - Reference: JUnit. JUnit 4. (2020) [Online]. Available: https://junit.org/junit4/.
 
 NOTE: This list will be updated as others are incorporated.
 
