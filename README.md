@@ -66,7 +66,7 @@ Core exercises:
 NOTE: This list will be updated as others are incorporated.
 
 # FAQ
-For typical questions (and answers) to the contents of this code base, please see the [FAQ](https://github.com/programming-the-iot/java-components/blob/default/FAQ.md)
+For typical questions (and answers) to the repositories of the Programming the IoT project, please see the [FAQ](https://github.com/programming-the-iot/book-exercise-tasks/blob/default/FAQ.md).
 
 # IMPORTANT NOTES
 This code base is under active development.
