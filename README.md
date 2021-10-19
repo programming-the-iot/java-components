@@ -3,7 +3,7 @@ This is the source repository for the Java components related to my Programming 
 
 The code in this repository is largely comprised of shell classes that are designed to be implemented by the reader and are NOT solutions. These shell classes and their relationships respresent a notional design that aligns with the requirements listed in [Programming the IoT Requirements](https://github.com/orgs/programming-the-iot/projects/1). These requirements encapsulate the programming exercises presented in my book [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401).
 
-# Links, Exercises, Updates, Errata, and Clarifications
+## Links, Exercises, Updates, Errata, and Clarifications
 
 Please see the following links to access exercises, errata / clarifications, and the e-book:
  - [Programming the IoT Kanban Board](https://github.com/orgs/programming-the-iot/projects/1)
