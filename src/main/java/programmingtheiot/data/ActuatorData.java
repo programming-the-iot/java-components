@@ -54,6 +54,10 @@ public class ActuatorData extends BaseIotData implements Serializable
 		return false;
 	}
 	
+	public void setAsResponse()
+	{
+	}
+	
 	public void setCommand(int command)
 	{
 	}

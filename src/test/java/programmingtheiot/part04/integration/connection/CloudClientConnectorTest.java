@@ -11,6 +11,7 @@ package programmingtheiot.part04.integration.connection;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.junit.After;
@@ -18,9 +19,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import programmingtheiot.common.ConfigConst;
+import programmingtheiot.common.DefaultDataMessageListener;
 import programmingtheiot.common.ResourceNameEnum;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
+import programmingtheiot.gda.app.DeviceDataManager;
 import programmingtheiot.gda.connection.*;
 
 /**
@@ -41,6 +44,7 @@ public class CloudClientConnectorTest
 	
 	// member var's
 	
+	private List<ICloudClient> cloudClientList = null;
 	private ICloudClient cloudClient = null;
 	
 	
@@ -68,26 +72,56 @@ public class CloudClientConnectorTest
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.UbidotsMqttCloudClientConnector#connectClient()}.
 	 */
-	//@Test
-	public void testConnectAndDisconnect()
+//	@Test
+	public void testCloudClientConnectAndDisconnect()
 	{
+		this.cloudClient.setDataMessageListener(new DefaultDataMessageListener());
+		
 		assertTrue(this.cloudClient.connectClient());
 		
 		try {
-			Thread.sleep(5000L);
+			// sleep for a minute or so...
+			
+			Thread.sleep(60000L);
 		} catch (Exception e) {
 			// ignore
 		}
 		
 		assertTrue(this.cloudClient.disconnectClient());
+		
+		_Logger.info("Test complete.");
+	}
+	
+	/**
+	 * Test method
+	 */
+	@Test
+	public void testIntegratedCloudClientConnectAndDisconnect()
+	{
+		DeviceDataManager ddm = new DeviceDataManager();
+		ddm.startManager();
+		
+		try {
+			// sleep for a minute or so...
+			
+			Thread.sleep(60000L);
+		} catch (Exception e) {
+			// ignore
+		}
+		
+		ddm.stopManager();
+		
+		_Logger.info("Test complete.");
 	}
 	
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.UbidotsMqttCloudClientConnector#publishMessage(programmingtheiot.common.ResourceNameEnum, java.lang.String, int)}.
 	 */
-	@Test
+//	@Test
 	public void testPublishAndSubscribe()
 	{
+		this.cloudClient.setDataMessageListener(new DefaultDataMessageListener());
+		
 		assertTrue(this.cloudClient.connectClient());
 		
 		SensorData sensorData = new SensorData();
@@ -101,7 +135,9 @@ public class CloudClientConnectorTest
 		assertTrue(this.cloudClient.subscribeToCloudEvents(ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE));
 		
 		try {
-			Thread.sleep(5000);
+			// sleep for a few seconds...
+			
+			Thread.sleep(5000L);
 		} catch (Exception e) {
 			// ignore
 		}
@@ -110,8 +146,9 @@ public class CloudClientConnectorTest
 		assertTrue(this.cloudClient.sendEdgeDataToCloud(ResourceNameEnum.CDA_SYSTEM_PERF_MSG_RESOURCE, sysPerfData));
 		
 		try {
-			// wait for 30 seconds
-			Thread.sleep(30000);
+			// sleep for half a minute or so...
+			
+			Thread.sleep(30000L);
 		} catch (Exception e) {
 			// ignore
 		}
@@ -119,7 +156,9 @@ public class CloudClientConnectorTest
 		assertTrue(this.cloudClient.unsubscribeFromCloudEvents(ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE));
 
 		try {
-			Thread.sleep(50000);
+			// sleep for a minute or so...
+			
+			Thread.sleep(50000L);
 		} catch (Exception e) {
 			// ignore
 		}

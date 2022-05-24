@@ -18,6 +18,7 @@ import org.junit.Test;
 
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.data.SensorData;
+import programmingtheiot.data.SystemPerformanceData;
 
 /**
  * This test case class contains very basic unit tests for
@@ -90,6 +91,21 @@ public class SensorDataTest
 		assertEquals(ssd.getName(), DEFAULT_NAME);
 		assertEquals(ssd.getStatusCode(), SensorData.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
+	}
+	
+	@Test
+	public void testDifferentDataInstanceUpdate()
+	{
+		SystemPerformanceData spd = new SystemPerformanceData();
+		spd.setName("Foobar");
+		spd.setCpuUtilization((float) 52.5);
+		spd.setMemoryUtilization((float) 21.4);
+		
+		SensorData ssd = new SensorData();
+		ssd.updateData(spd);
+		
+		_Logger.info(ssd.toString());
+		_Logger.info(spd.toString());
 	}
 	
 	

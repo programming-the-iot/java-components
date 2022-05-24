@@ -278,7 +278,7 @@ public abstract class BaseIotData implements Serializable
 	{
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append(ConfigConst.NAME_PROP).append('=').append(',');
+		sb.append(ConfigConst.NAME_PROP).append('=').append(this.name).append(',');
 		sb.append(ConfigConst.TYPE_ID_PROP).append('=').append(this.typeID).append(',');
 		sb.append(ConfigConst.TIMESTAMP_PROP).append('=').append(this.timeStamp).append(',');
 		sb.append(ConfigConst.STATUS_CODE_PROP).append('=').append(this.statusCode).append(',');
