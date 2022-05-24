@@ -44,7 +44,7 @@ NOTE: The directory structure and all files are subject to change based on feedb
 PR's are disabled while the codebase is being developed.
 
 ## Updates
-Much of this repository, and in particular unit and integration tests, will continue to evolve, so please check back regularly for potential updates.
+Much of this repository, and in particular unit and integration tests, will continue to evolve, so please check back regularly for potential updates. Please note that API changes can - and likely will - occur at any time.
 
 # REFERENCES
 This repository has external dependencies on other open source projects. I'm grateful to the open source community and authors / maintainers of the following libraries:
@@ -64,7 +64,7 @@ Core exercises:
 - [gson](https://github.com/google/gson)
   - Reference: Google. Gson. (2008) [Online]. Available: https://github.com/google/gson.
 - [javax mail](https://javaee.github.io/javamail/)
-  - Reference: Oracle. JavaMail. (2020) [Online]. Available: https://javaee.github.io/javamail/.
+  - Reference: Oracle. JavaMail. (2018) [Online]. Available: https://javaee.github.io/javamail/.
 - [jedis](https://github.com/redis/jedis)
   - Reference: J. Leibiusky. Jedis. (2020) [Online]. Available: https://github.com/redis/jedis.
 - [junit](https://github.com/junit-team/junit4/)
