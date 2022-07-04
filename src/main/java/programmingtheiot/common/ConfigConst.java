@@ -42,6 +42,9 @@ public class ConfigConst
 	public static final float  DEFAULT_LON = DEFAULT_VAL;
 	public static final float  DEFAULT_ELEVATION = DEFAULT_VAL;
 
+	public static final int DEFAULT_ACTION_ID = 0;
+	public static final int INITIAL_SEQUENCE_NUMBER = 0;
+	
 	public static final String PRODUCT_NAME = "PIOT";
 	public static final String CLOUD        = "Cloud";
 	public static final String GATEWAY      = "Gateway";
@@ -59,6 +62,8 @@ public class ConfigConst
 	 */
 
 	public static final String NAME_PROP        = "name";
+	public static final String DEVICE_ID_PROP   = "deviceID";
+	public static final String TYPE_CATEGORY_ID_PROP = "typeCategoryID";
 	public static final String TYPE_ID_PROP     = "typeID";
 	public static final String TIMESTAMP_PROP   = "timeStamp";
 	public static final String HAS_ERROR_PROP   = "hasError";
@@ -67,8 +72,6 @@ public class ConfigConst
 	public static final String LATITUDE_PROP    = "latitude";
 	public static final String LONGITUDE_PROP   = "longitude";
 	public static final String ELEVATION_PROP   = "elevation";
-	
-	public static final String UPDATE_NOTIFICATIONS_MSG = "TestUpdateMsg";
 	
 	public static final String COMMAND_PROP     = "command";
 	public static final String STATE_DATA_PROP  = "stateData";
@@ -82,6 +85,19 @@ public class ConfigConst
 	public static final String SENSOR_DATA_LIST_PROP      = "sensorDataList";
 	public static final String SYSTEM_PERF_DATA_LIST_PROP = "systemPerfDataList";
 	
+	public static final String ACTION_ID_PROP             = "actionID";
+	public static final String DATA_URI_PROP              = "dataURI";
+	public static final String MESSAGE_PROP               = "message";
+	public static final String ENCODING_NAME_PROP         = "encodingName";
+	public static final String RAW_DATA_PROP              = "rawData";
+	public static final String SEQUENCE_NUMBER_PROP       = "seqNo";
+	public static final String USE_SEQUENCE_NUMBER_PROP   = "useSeqNo";
+	public static final String SEQUENCE_NUMBER_TOTAL_PROP = "seqNoTotal";
+	
+	public static final String SEND_RESOURCE_NAME_PROP    = "sendResourceName";
+	public static final String RECEIVE_RESOURCE_NAME_PROP = "receiveResourceName";
+	public static final String IS_PING_PROP               = "isPing";
+
 	/*****
 	 * Resource and Topic Names
 	 */
@@ -99,22 +115,35 @@ public class ConfigConst
 	// these types could be read from a common configuration file
 	// used by both the CDA and GDA to avoid hard-coding type ID's
 	// within both source trees' ConfigConst modules
-	public static final int    DEFAULT_TYPE_ID       =   0;
-	public static final int    DEFAULT_ACTUATOR_TYPE = DEFAULT_TYPE_ID;
-	public static final int    DEFAULT_SENSOR_TYPE   = DEFAULT_TYPE_ID;
+	public static final int    DEFAULT_TYPE_ID           =    0;
+	public static final int    DEFAULT_TYPE_CATEGORY_ID  =    0;
+	public static final int    DEFAULT_ACTUATOR_TYPE     = DEFAULT_TYPE_ID;
+	public static final int    DEFAULT_SENSOR_TYPE       = DEFAULT_TYPE_ID;
 	
-	public static final int    HVAC_ACTUATOR_TYPE       =   1;
-	public static final int    HUMIDIFIER_ACTUATOR_TYPE =   2;
-	public static final int    LED_ACTUATOR_TYPE        = 100;
+	public static final int    ENV_DEVICE_TYPE           = 1000;
+	public static final int    HVAC_ACTUATOR_TYPE        = 1001;
+	public static final int    HUMIDIFIER_ACTUATOR_TYPE  = 1002;
 	
-	public static final int    HUMIDITY_SENSOR_TYPE =   1;
-	public static final int    PRESSURE_SENSOR_TYPE =   2;
-	public static final int    TEMP_SENSOR_TYPE     =   3;
-	public static final int    SYSTEM_PERF_TYPE     = 100;
-	public static final int    CPU_UTIL_TYPE        = 101;
-	public static final int    DISK_UTIL_TYPE       = 102;
-	public static final int    MEM_UTIL_TYPE        = 103;
-	public static final int    CAMERA_SENSOR_TYPE   = 200;
+	public static final int    HUMIDITY_SENSOR_TYPE      = 1010;
+	public static final int    PRESSURE_SENSOR_TYPE      = 1012;
+	public static final int    TEMP_SENSOR_TYPE          = 1013;
+	
+	public static final int    DISPLAY_DEVICE_TYPE       = 2000;
+	public static final int    LED_ACTUATOR_TYPE         = 2001;
+	public static final int    LED_DISPLAY_ACTUATOR_TYPE = 2001;
+	
+	public static final int    MEDIA_DEVICE_TYPE         = 3000;
+	public static final int    CAMERA_SENSOR_TYPE        = 3001;
+	
+	public static final int    SYSTEM_MGMT_TYPE          = 8000;
+	public static final int    RESOURCE_MGMT_TYPE        = 8001;
+	
+	public static final String RESOURCE_MGMT_NAME = "ResourceMgmt";
+	
+	public static final int    SYSTEM_PERF_TYPE          = 9000;
+	public static final int    CPU_UTIL_TYPE             = 9001;
+	public static final int    DISK_UTIL_TYPE            = 9002;
+	public static final int    MEM_UTIL_TYPE             = 9003;
 	
 	public static final String LED_ACTUATOR_NAME        = "LedActuator";
 	public static final String HUMIDIFIER_ACTUATOR_NAME = "HumidifierActuator";
@@ -127,23 +156,16 @@ public class ConfigConst
 	public static final String DISK_UTIL_NAME = "DiskUtil";
 	public static final String MEM_UTIL_NAME  = "MemUtil";
 
+	public static final String MEDIA_MSG       = "MediaMsg";
 	public static final String SENSOR_MSG      = "SensorMsg";
 	public static final String ACTUATOR_CMD    = "ActuatorCmd";
 	public static final String ACTUATOR_RESPONSE = "ActuatorResponse";
 	public static final String MGMT_STATUS_MSG = "MgmtStatusMsg";
 	public static final String MGMT_STATUS_CMD = "MgmtStatusCmd";
 	public static final String SYSTEM_PERF_MSG = "SystemPerfMsg";
-
-	public static final String CDA_ACTUATOR_CMD_MSG_RESOURCE = PRODUCT_NAME + "/" + CONSTRAINED_DEVICE + "/" + ACTUATOR_CMD;
-	public static final String CDA_ACTUATOR_RESPONSE_MSG_RESOURCE = PRODUCT_NAME + "/" + CONSTRAINED_DEVICE + "/" + ACTUATOR_RESPONSE;
-	public static final String CDA_MGMT_STATUS_MSG_RESOURCE  = PRODUCT_NAME + "/" + CONSTRAINED_DEVICE + "/" + MGMT_STATUS_MSG;
-	public static final String CDA_MGMT_CMD_MSG_RESOURCE     = PRODUCT_NAME + "/" + CONSTRAINED_DEVICE + "/" + MGMT_STATUS_CMD;
-	public static final String CDA_SENSOR_DATA_MSG_RESOURCE  = PRODUCT_NAME + "/" + CONSTRAINED_DEVICE + "/" + SENSOR_MSG;
-	public static final String CDA_SYSTEM_PERF_MSG_RESOURCE  = PRODUCT_NAME + "/" + CONSTRAINED_DEVICE + "/" + SYSTEM_PERF_MSG;
 	
-	public static final String GDA_MGMT_STATUS_MSG_RESOURCE  = PRODUCT_NAME + "/" + GATEWAY_DEVICE + "/" + MGMT_STATUS_MSG;
-	public static final String GDA_MGMT_CMD_MSG_RESOURCE     = PRODUCT_NAME + "/" + GATEWAY_DEVICE + "/" + MGMT_STATUS_CMD;
-	public static final String GDA_SYSTEM_PERF_MSG_RESOURCE  = PRODUCT_NAME + "/" + GATEWAY_DEVICE + "/" + SYSTEM_PERF_MSG;
+	public static final String UPDATE_NOTIFICATIONS_MSG      = "UpdateMsg";
+	public static final String RESOURCE_REGISTRATION_REQUEST = "ResourceRegRequest";
 
 	/*****
 	 * Configuration Sections, Keys and Defaults
@@ -176,6 +198,8 @@ public class ConfigConst
 	public static final String ENABLE_SMTP_CLIENT_KEY        = "enableSmtpClient";
 	public static final String ENABLE_PERSISTENCE_CLIENT_KEY = "enablePersistenceClient";
 	public static final String ENABLE_SYSTEM_PERF_KEY        = "enableSystemPerformance";
+	
+	public static final String ENABLE_RUN_FOREVER_KEY        = "enableRunForever";
 	
 	public static final String AWS_CLOUD_SVC_NAME     = "AWS";
 	public static final String AZURE_CLOUD_SVC_NAME   = "Azure";
@@ -245,7 +269,7 @@ public class ConfigConst
 	public static final String SMTP_PROP_ENABLE_TLS_KEY = "mail.smtp.starttls.enable";
 
 	public static final String TEST_EMPTY_APP_KEY = "testEmptyApp";
-	
+
 	
 	// constructors
 	
