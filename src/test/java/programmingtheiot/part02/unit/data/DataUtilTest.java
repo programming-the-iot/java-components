@@ -114,7 +114,14 @@ public class DataUtilTest
 		assertTrue(data.getMemoryUtilization() == data2.getMemoryUtilization());
 	}
 	
-	@Test
+	/**
+	 * NOTE: SystemStateData is not required for the exercises in Programming the IoT.
+	 * The test case below is disabled by default, but can easily be re-enabled by
+	 * uncommenting the @Test attribute if SystemStateData is optionally implemented.
+	 * 
+	 */
+	
+//	@Test
 	public void testSystemStateDatatoJsonAndBack()
 	{
 		DataUtil dataUtil = DataUtil.getInstance();

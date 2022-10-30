@@ -63,7 +63,14 @@ public class SystemStateDataTest
 	
 	// test methods
 	
-	@Test
+	/**
+	 * NOTE: SystemStateData is not required for the exercises in Programming the IoT.
+	 * The test cases below are disabled by default, but can easily be re-enabled by
+	 * uncommenting the @Test attribute if SystemStateData is optionally implemented.
+	 * 
+	 */
+	
+//	@Test
 	public void testDefaultValues()
 	{
 		SystemStateData ssd = new SystemStateData();
@@ -73,7 +80,7 @@ public class SystemStateDataTest
 		assertTrue(ssd.getCommand() == ConfigConst.DEFAULT_COMMAND);
 	}
 	
-	@Test
+//	@Test
 	public void testParameterUpdates()
 	{
 		SystemStateData ssd = createTestData();
@@ -97,7 +104,7 @@ public class SystemStateDataTest
 		}
 	}
 	
-	@Test
+//	@Test
 	public void testFullUpdate()
 	{
 		SystemStateData ssd = new SystemStateData();
