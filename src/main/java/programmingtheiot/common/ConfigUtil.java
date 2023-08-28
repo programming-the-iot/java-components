@@ -10,11 +10,15 @@ package programmingtheiot.common;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.commons.configuration.*;
+import org.apache.commons.configuration2.*;
+import org.apache.commons.configuration2.ex.ConfigurationException;
 
 /**
  * A simple utility wrapper around the Apache Commons
@@ -43,7 +47,7 @@ public class ConfigUtil
 	
 	// private var's
 	
-	private HierarchicalINIConfiguration sectionProperties = null;
+	private INIConfiguration sectionProperties = null;
 	
 	private boolean isLoaded = false;
 	private String  configFileName = ConfigConst.DEFAULT_CONFIG_FILE_NAME;
@@ -303,6 +307,8 @@ public class ConfigUtil
 					props = new Properties();
 					fis = new FileInputStream(credFileName);
 					props.load(fis);
+					
+					_Logger.info("Successfully loaded credentials from file: " + credFileName);
 				} catch (Exception e) {
 					_Logger.log(Level.WARNING, "Failed to load credentials from file: " + credFileName, e);
 				} finally {
@@ -333,7 +339,7 @@ public class ConfigUtil
 	 */
 	private void initBackingProperties()
 	{
-		sectionProperties = new HierarchicalINIConfiguration();
+		sectionProperties = new INIConfiguration();
 	}
 	
 	/**
@@ -375,16 +381,33 @@ public class ConfigUtil
 				// init the backing properties, or clear out the existing one
 				initBackingProperties();
 				
-				sectionProperties.setFileName(cfgFile.getAbsoluteFile().toString());
-				sectionProperties.load();
+				FileReader fReader = new FileReader(new File(cfgFile.getAbsoluteFile().toString()));
+				
+				sectionProperties.read(fReader);
+				// sectionProperties.setFileName(cfgFile.getAbsoluteFile().toString());
+				// sectionProperties.load();
 				isLoaded = true;
 			} catch (ConfigurationException e) {
 				_Logger.log(
 					Level.SEVERE,
-					"Failed to load existing config file {0} doesn't exist. Config not set.",
+					"Failed to parse existing config file: {0}. Config not set.",
 					cfgFile.getAbsolutePath());
 				
 				_Logger.log(Level.SEVERE, "Configuration exception thrown loading config file.", e);
+			} catch (FileNotFoundException e) {
+				_Logger.log(
+					Level.SEVERE,
+					"Failed to load config file: {0} doesn't exist. Config not set.",
+					cfgFile.getAbsolutePath());
+				
+				_Logger.log(Level.SEVERE, "File exception thrown loading config file.", e);
+			} catch (IOException e) {
+				_Logger.log(
+					Level.SEVERE,
+					"Failed to read config file: {0}. Config not set.",
+					cfgFile.getAbsolutePath());
+				
+				_Logger.log(Level.SEVERE, "IO exception thrown loading config file.", e);
 			}
 		} else {
 			_Logger.log(
