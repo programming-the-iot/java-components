@@ -8,6 +8,7 @@
 
 package programmingtheiot.gda.connection;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -23,19 +24,22 @@ import programmingtheiot.data.DataUtil;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
 
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.exceptions.JedisConnectionException;
+import com.influxdb.client.InfluxDBClient;
+import com.influxdb.client.InfluxDBClientFactory;
+import com.influxdb.client.WriteApiBlocking;
+import com.influxdb.client.write.Point;
+import com.influxdb.client.domain.WritePrecision;
 
 /**
  * Shell representation of class for student implementation.
  * 
  */
-public class RedisPersistenceAdapter implements IPersistenceClient
+public class InfluxPersistenceAdapter implements IPersistenceClient
 {
 	// static
 	
 	private static final Logger _Logger =
-		Logger.getLogger(RedisPersistenceAdapter.class.getName());
+		Logger.getLogger(InfluxPersistenceAdapter.class.getName());
 	
 	// private var's
 	
@@ -46,15 +50,13 @@ public class RedisPersistenceAdapter implements IPersistenceClient
 	 * Default.
 	 * 
 	 */
-	public RedisPersistenceAdapter()
+	public InfluxPersistenceAdapter()
 	{
 		super();
 		
-		initConfig();
+		this.initConfig();
 	}
 	
-	
-	// public methods
 	
 	// public methods
 	

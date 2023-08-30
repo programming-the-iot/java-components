@@ -211,6 +211,14 @@ public class ConfigConst
 	public static final String GCP_CLOUD_GATEWAY_SERVICE     = CLOUD   + "." + GATEWAY_SERVICE + "." + GCP_CLOUD_SVC_NAME;
 	public static final String UBIDOTS_CLOUD_GATEWAY_SERVICE = CLOUD   + "." + GATEWAY_SERVICE + "." + UBIDOTS_CLOUD_SVC_NAME;
 	
+	public static final String FILE_DATA_SVC_NAME     = "File";
+	public static final String INFLUX_DATA_SVC_NAME   = "Influx";
+	public static final String REDIS_DATA_SVC_NAME    = "Redis";
+	
+	public static final String FILE_DATA_GATEWAY_SERVICE   = DATA   + "." + GATEWAY_SERVICE + "." + FILE_DATA_SVC_NAME;
+	public static final String INFLUX_DATA_GATEWAY_SERVICE = DATA   + "." + GATEWAY_SERVICE + "." + INFLUX_DATA_SVC_NAME;
+	public static final String REDIS_DATA_GATEWAY_SERVICE  = DATA   + "." + GATEWAY_SERVICE + "." + REDIS_DATA_SVC_NAME;
+	
 	public static final String CLOUD_GATEWAY_SERVICE = CLOUD   + "." + GATEWAY_SERVICE;
 	public static final String COAP_GATEWAY_SERVICE  = COAP    + "." + GATEWAY_SERVICE;
 	public static final String MQTT_GATEWAY_SERVICE  = MQTT    + "." + GATEWAY_SERVICE;
@@ -227,6 +235,7 @@ public class ConfigConst
 	public static final String BASE_TOPIC_KEY       = "baseTopic";
 	public static final String CLIENT_ENDPOINT_KEY  = "clientEndpoint";
 
+	public static final String PROTOCOL_KEY         = "protocol";
 	public static final String HOST_KEY             = "host";
 	public static final String PORT_KEY             = "port";
 	public static final String SECURE_PORT_KEY      = "securePort";
@@ -268,8 +277,13 @@ public class ConfigConst
 	public static final String SMTP_PROP_AUTH_KEY       = "mail.smtp.auth";
 	public static final String SMTP_PROP_ENABLE_TLS_KEY = "mail.smtp.starttls.enable";
 
-	public static final String TEST_EMPTY_APP_KEY = "testEmptyApp";
+	public static final String TEMP_DATA_PATH_KEY  = "tmpDataPath";
+	public static final String TEST_EMPTY_APP_KEY  = "testEmptyApp";
 
+	public static final String ORGANIZATION_KEY    = "organization";
+	public static final String DATABASE_KEY        = "database";
+	public static final String ENV_DATA_BUCKET_KEY = "envDataBucket";
+	public static final String SYS_DATA_BUCKET_KEY = "sysDataBucket";
 	
 	// constructors
 	

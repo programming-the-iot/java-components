@@ -92,3 +92,5 @@ If  any  code  samples  or  other  technology  this  work  contains, describes, 
 
 # LICENSE
 Please see [LICENSE](https://github.com/programming-the-iot/java-components/blob/default/LICENSE) if you plan to use this code.
+
+Please refer to the referenced libraries for their respective licenses.

@@ -47,6 +47,11 @@
 			<version>1.2.5</version>
 		</dependency>
 		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.mqttv5.client</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<dependency>
 			<groupId>org.eclipse.californium</groupId>
 			<artifactId>californium-core</artifactId>
 			<version>3.9.0</version>
@@ -56,24 +61,47 @@
 			<artifactId>scandium</artifactId>
 			<version>3.9.0</version>
 		</dependency>
+		
 		<!--
-		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>jakarta.mail</artifactId>
-			<version>2.0.1</version>
-		</dependency>
+			NOTE: These dependencies are optional for use
+			with Lab Module's 05 and 12.
 		-->
-		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>javax.mail</artifactId>
-			<version>1.6.2</version>
-		</dependency>
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>4.4.3</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.influxdb</groupId>
+			<artifactId>influxdb-client-java</artifactId>
+			<version>6.10.0</version>
+		</dependency>
+
+		<!--
+			NOTE: These dependencies are optional for use
+			with Lab Module's 11 and 12.
+		-->
+		<dependency>
+			<groupId>jakarta.mail</groupId>
+			<artifactId>jakarta.mail-api</artifactId>
+			<version>2.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-iot-device-sdk-java</artifactId>
+			<version>1.3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-iot-device-sdk-java-samples</artifactId>
+			<version>1.3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure.sdk.iot</groupId>
+			<artifactId>iot-device-client</artifactId>
+			<version>2.2.0</version>
 		</dependency>
 	</dependencies>
 	<build>
