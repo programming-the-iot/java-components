@@ -49,28 +49,38 @@ Much of this repository, and in particular unit and integration tests, will cont
 # REFERENCES
 This repository has external dependencies on other open source projects. I'm grateful to the open source community and authors / maintainers of the following libraries:
 
-Core exercises:
+Lab Module Library References (not all are required for each lab module):
 
+- [aws-iot-device-sdk-java](https://github.com/aws/aws-iot-device-sdk-java)
+  - Reference: AWS. AWS IoT Device SDK (Java). (2023) [Online]. Available: https://github.com/aws/aws-iot-device-sdk-java.
+- [aws-iot-device-sdk-java-samples](https://github.com/aws/aws-iot-device-sdk-java)
+  - Reference: AWS. AWS IoT Device SDK Samples (Java). (2023) [Online]. Available: https://github.com/aws/aws-iot-device-sdk-java.
+- [azure-iot-device-client](https://github.com/Azure/azure-iot-sdk-java)
+  - Reference: Microsoft. Azure IoT Device Client (Java). (2023) [Online]. Available: https://github.com/Azure/azure-iot-sdk-java.
 - [californium-core](https://github.com/eclipse/californium)
   - Reference: Eclipse Foundation, Inc. Californium (Cf) - CoAP for Java. (2020) [Online]. Available. https://github.com/eclipse/californium.
 - [californium/scandium-core](https://github.com/eclipse/californium/tree/master/scandium-core)
   - Reference: Eclipse Foundation, Inc. Scandium (Sc) - Security for Californium. (2021) [Online]. Available. https://github.com/eclipse/californium/tree/master/scandium-core.
 - [commons-cli](https://commons.apache.org/proper/commons-cli/)
   - Reference: The Apache Software Foundation. Commons CLI. (2019) [Online]. Available. https://commons.apache.org/proper/commons-cli/.
-- [commons-configuration](commons.apache.org/proper/commons-configuration/)
-  - Reference: The Apache Software Foundation. Commons Configuration. (2020) [Online]. Available: https://commons.apache.org/proper/commons-configuration/.
-- [eclipse paho](https://www.eclipse.org/paho/)
+- [commons-configuration2](commons.apache.org/proper/commons-configuration/)
+  - Reference: The Apache Software Foundation. Commons Configuration 2. (2023) [Online]. Available: https://commons.apache.org/proper/commons-configuration/.
+- [org.eclipse.paho.client.mqttv3](https://www.eclipse.org/paho/)
   - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2020) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
+- [org.eclipse.paho.mqttv5.client](https://www.eclipse.org/paho/)
+  - Reference: Eclipse Foundation, Inc. Eclipse Paho Java Client. (2023) [Online]. Available: https://github.com/eclipse/paho.mqtt.java.
 - [gson](https://github.com/google/gson)
   - Reference: Google. Gson. (2008) [Online]. Available: https://github.com/google/gson.
-- [javax mail](https://javaee.github.io/javamail/)
-  - Reference: Oracle. JavaMail. (2018) [Online]. Available: https://javaee.github.io/javamail/.
+- [influxdb-client-java](https://github.com/influxdata/influxdb-client-java)
+  - Reference: Influx Data, Inc. Influx DB. (2023) [Online]. Available: https://github.com/influxdata/influxdb-client-java.
+- [jakarta.mail-api](https://jakartaee.github.io/mail-api/)
+  - Reference: Eclipse Foundation, Inc. Jakarta Mail. (2023) [Online]. Available: https://github.com/jakartaee/mail-api.
 - [jedis](https://github.com/redis/jedis)
   - Reference: J. Leibiusky. Jedis. (2020) [Online]. Available: https://github.com/redis/jedis.
 - [junit](https://github.com/junit-team/junit4/)
   - Reference: JUnit. JUnit 4. (2020) [Online]. Available: https://junit.org/junit4/.
 
-NOTE: This list will be updated as others are incorporated.
+NOTE: This list will be updated as other libraries / dependencies are incorporated.
 
 # FAQ
 For typical questions (and answers) to the repositories of the Programming the IoT project, please see the [FAQ](https://github.com/programming-the-iot/book-exercise-tasks/blob/default/FAQ.md).
