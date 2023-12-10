@@ -29,7 +29,10 @@ import programmingtheiot.gda.connection.*;
  * but serve as a starting point for the student implementing
  * additional functionality within their Programming the IoT
  * environment.
- *
+ * 
+ * IMPORTANT NOTE: This test expects MqttClientConnector to be
+ * configured using the synchronous MqttClient.
+ * 
  */
 public class MqttClientConnectorTest
 {
@@ -41,6 +44,8 @@ public class MqttClientConnectorTest
 	
 	// member var's
 	
+	// TODO: make sure MqttClientConnector is configured to
+	// use the synchronous MqttClient
 	private MqttClientConnector mqttClient = null;
 	
 	
