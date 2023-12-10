@@ -18,6 +18,7 @@ port           = 1883
 securePort     = 8883
 defaultQoS     = 0
 keepAlive      = 60
+useAsyncClient = True
 enableAuth     = True
 enableCrypt    = True
 baseUrl        = 
@@ -47,6 +48,7 @@ defaultQoS     = 0
 keepAlive      = 60
 enableAuth     = False
 enableCrypt    = False
+useAsyncClient = False
 
 #
 # CoAP client and server configuration information

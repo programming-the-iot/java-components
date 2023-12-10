@@ -44,6 +44,7 @@ public abstract class BaseIotData implements Serializable
     private float   longitude  = ConfigConst.DEFAULT_LON;
     private float   elevation  = ConfigConst.DEFAULT_ELEVATION;
     
+	// NOTE: This is not used by the CDA
     private long    timeStampMillis = 0L;
 
     

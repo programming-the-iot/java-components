@@ -40,7 +40,8 @@ public class SimpleCertManagementUtil
 	
 	private static final SimpleCertManagementUtil _Instance = new SimpleCertManagementUtil();
 	
-	public static final String DEFAULT_SECURE_SOCKET_TYPE = "SSL";
+	// other options include SSL and TLSv1.3
+	public static final String DEFAULT_SECURE_SOCKET_TYPE = "TLSv1.2";
 	public static final String DEFAULT_CERTIFICATE_TYPE = "X.509";
 	
 	/**
