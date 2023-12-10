@@ -124,6 +124,19 @@ public class CloudClientConnectorTest
 		
 		assertTrue(this.cloudClient.connectClient());
 		
+		try {
+			// sleep for a couple of seconds or so...
+			// 
+			// TODO: if cloudClient delegates to MqttClientConnector,
+			// which in turn delegates to MqttAsyncClient, the timing
+			// of the sleep cycle may need to be manually adjusted to
+			// allow the connection to complete
+			
+			Thread.sleep(2000L);
+		} catch (Exception e) {
+			// ignore
+		}
+		
 		SensorData sensorData = new SensorData();
 		sensorData.setName(ConfigConst.TEMP_SENSOR_NAME);
 		sensorData.setValue(92.0f);
@@ -136,6 +149,12 @@ public class CloudClientConnectorTest
 		
 		try {
 			// sleep for a few seconds...
+			// 
+			// TODO: if cloudClient delegates to MqttClientConnector,
+			// which in turn delegates to MqttAsyncClient, the timing
+			// of the sleep cycle may need to be manually adjusted to
+			// allow the connection to complete (even though the method
+			// call may assume success if using an async connect)
 			
 			Thread.sleep(5000L);
 		} catch (Exception e) {
@@ -164,6 +183,20 @@ public class CloudClientConnectorTest
 		}
 
 		assertTrue(this.cloudClient.disconnectClient());
+
+		try {
+			// sleep for a couple of seconds or so...
+			// 
+			// TODO: if cloudClient delegates to MqttClientConnector,
+			// which in turn delegates to MqttAsyncClient, the timing
+			// of the sleep cycle may need to be manually adjusted to
+			// allow the disconnect to complete (even though the method
+			// call may assume success if using an async disconnect)
+			
+			Thread.sleep(2000L);
+		} catch (Exception e) {
+			// ignore
+		}
 	}
 	
 }
