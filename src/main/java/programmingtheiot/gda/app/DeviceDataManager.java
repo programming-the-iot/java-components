@@ -88,6 +88,12 @@ public class DeviceDataManager implements IDataMessageListener
 	}
 
 	@Override
+	public boolean handleActuatorCommandRequest(ResourceNameEnum resourceName, ActuatorData data)
+	{
+		return false;
+	}
+
+	@Override
 	public boolean handleIncomingMessage(ResourceNameEnum resourceName, String msg)
 	{
 		return false;

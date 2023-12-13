@@ -65,7 +65,7 @@ public class MqttPublishDataMessageListener implements IDataMessageListener
 	// public methods
 	
 	/**
-	 * Processes and publishes an actuator command message.
+	 * Processes and logs an actuator response message.
 	 * 
 	 * @param resourceName Ignored in this method implementation.
 	 * @param data The data container to convert to JSON and publish.
@@ -73,6 +73,21 @@ public class MqttPublishDataMessageListener implements IDataMessageListener
 	 */
 	@Override
 	public boolean handleActuatorCommandResponse(ResourceNameEnum resourceName, ActuatorData data)
+	{
+		_Logger.log(Level.INFO, "Topic: {0}, Message: {1}", new Object[] {resourceName.getResourceName(), data});
+		
+		return true;
+	}
+
+	/**
+	 * Processes and publishes an actuator command message.
+	 * 
+	 * @param resourceName Ignored in this method implementation.
+	 * @param data The data container to convert to JSON and publish.
+	 * @return boolean Will always return true.
+	 */
+	@Override
+	public boolean handleActuatorCommandRequest(ResourceNameEnum resourceName, ActuatorData data)
 	{
 		_Logger.log(Level.INFO, "Topic: {0}, Message: {1}", new Object[] {resourceName.getResourceName(), data});
 		

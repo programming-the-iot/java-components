@@ -33,6 +33,16 @@ public interface IDataMessageListener
 	 * Callback signature for data message passing using the given parameters.
 	 * 
 	 * @param resourceName The enum representing the String resource name.
+	 * @param data The ActuatorData data - this will usually be the decoded payload
+	 * from a connection using either MQTT or CoAP.
+	 * @return True on success; false otherwise.
+	 */
+	public boolean handleActuatorCommandRequest(ResourceNameEnum resourceName, ActuatorData data);
+
+	/**
+	 * Callback signature for data message passing using the given parameters.
+	 * 
+	 * @param resourceName The enum representing the String resource name.
 	 * @param msg The String message - this will usually be the decoded payload
 	 * from a connection using either MQTT or CoAP.
 	 * @return True on success; false otherwise.
