@@ -75,5 +75,15 @@ public interface IPubSubClient
 	 * messages, such as those received from a subscription event.
 	 * @return bool True on success (if listener is non-null will always be the case), False otherwise.
 	 */
-	public boolean setDataMessageListener(IDataMessageListener listener); 
+	public boolean setDataMessageListener(IDataMessageListener listener);
+
+	/**
+	 * Sets the connection listener reference, assuming listener is non-null.
+	 * 
+	 * @param listener The connection listener instance to use for passing relevant
+	 * connect / disconnect events.
+	 * @return bool True on success (if listener is non-null will always be the case), False otherwise.
+	 */
+	public boolean setConnectionListener(IConnectionListener listener);
+	
 }

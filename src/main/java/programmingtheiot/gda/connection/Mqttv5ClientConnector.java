@@ -94,6 +94,12 @@ public class Mqttv5ClientConnector implements IPubSubClient, MqttCallback
 	}
 
 	@Override
+	public boolean setConnectionListener(IConnectionListener listener)
+	{
+		return false;
+	}
+	
+	@Override
 	public boolean setDataMessageListener(IDataMessageListener listener)
 	{
 		return false;
