@@ -1,4 +1,15 @@
 # Programming the IoT - Java Components
+
+## IMPORTANT NOTE - REPOSITORY HAS CHANGED
+
+This is the original repository for Java exercises for Programming the IoT. The new repository, which contains updated code templates and sample content and VS Code configurations, can be found here:
+
+- NEW GDA REPOSITORY: https://github.com/programming-the-iot/gda-java-components
+
+Please use the NEW GDA REPOSITORY shown in the above link!
+
+## About This Repository
+
 This is the source repository for the Java components related to my Programming the Internet of Things book and Connected Devices IoT course. These are shell wrappers ONLY and are not a solution set (which is a separate repository, not yet released). For convenience to the reader, some basic functionality has already been implemented (such as configuration logic, consts, interfaces, a simple certificate file load utility, and test cases).
 
 The code in this repository is largely comprised of shell classes that are designed to be implemented by the reader and are NOT solutions. These shell classes and their relationships respresent a notional design that aligns with the requirements listed in [Programming the IoT Requirements](https://github.com/orgs/programming-the-iot/projects/1). These requirements encapsulate the programming exercises presented in my book [Programming the Internet of Things: An Introduction to Building Integrated, Device to Cloud IoT Solutions](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401).
